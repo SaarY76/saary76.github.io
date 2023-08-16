@@ -1,0 +1,303 @@
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  margin: 0; /* Add this to remove the default margin from the body */
+  text-align: center;
+  background-color: white;
+  min-height: 100vh; /* Minimum height of viewport */
+}
+
+header {
+  background-color: rgb(104, 157, 210);
+  margin: 0;
+  padding: 10px;
+  font-weight: bold;
+  position: fixed;
+  top: 0; /* Aligns the header to the top of the viewport */
+  left: 0; /* Aligns the header to the left of the viewport */
+  right: 0;
+  width: 100%; /* Ensures the header spans the full width of the viewport */
+  z-index: 1000; /* Places the header above other elements */
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  margin-top: 40px;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+}
+
+#profile_image {
+  width: 300px;
+  height: 300px;
+  border-radius: 250px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#ul_header {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+#ul_header a {
+  text-decoration: none;
+  color: black;
+}
+
+article {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 80px;
+  font-size: 0.9rem;
+}
+
+article p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#about_headline {
+  margin-bottom: 40px;
+}
+
+#about {
+  margin-bottom: 150px;
+}
+
+h1 {
+  padding-top: 70px; /* Adjust based on the height of your fixed header */
+  margin-top: -70px;
+  margin-top: auto;
+}
+
+h2 {
+  padding-top: 70px; /* Adjust based on the height of your fixed header */
+  margin-top: -70px;
+  margin-bottom: 10px;
+}
+
+#friends_to_meet_div {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This creates 3 equal columns */
+  margin-top: 20px;
+  gap: 20px; /* Gap between grid items */
+  width: max-content;
+  margin: 20px auto;
+  margin-bottom: 120px;
+}
+
+.friends_to_meet_div_img {
+  position: relative; /* Added */
+  width: 350px;
+  height: 500px;
+  margin: 20px;
+  overflow: hidden; /* Ensures that the overlay doesn't overflow */
+}
+
+.friends_to_meet_img {
+  display: block; /* Removes default margin of img */
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center; /* Centers the text */
+  width: 80%; /* Limits text width to not take the full width */
+}
+
+.friends_to_meet_div_img:hover .overlay-text {
+  display: block;
+}
+
+.friends_to_meet_div_img:hover .friends_to_meet_img {
+  opacity: 0.7; /* Optional, for added effect */
+}
+
+#grades_monitor_div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* This creates 2 equal columns */
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+  gap: 20px; /* Gap between grid items */
+  width: max-content; /* Ensures the grid container doesn't take up more space than it needs */
+  margin: 20px auto; /* Top and bottom margin set to 20px and left/right set to auto */
+  margin-bottom: 200px;
+}
+
+.grades_monitor_img {
+  position: relative; /* Added */
+  width: 400px;
+  height: 600px;
+  overflow: hidden; /* Ensures that the overlay doesn't overflow */
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#article_education {
+  margin-bottom: 120px;
+}
+
+#article_education p {
+  margin: 10px;
+  color: rgb(128, 127, 127);
+  font-size: 0.8rem;
+}
+
+#contact_headline {
+  margin-bottom: 30px;
+}
+
+#article_contact {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+#article_contact div {
+  justify-content: start;
+  display: flex;
+  justify-items: center;
+  margin: 30px;
+}
+
+#article_contact img {
+  margin-right: 20px;
+}
+
+/* Responsive styling begins here */
+
+/* Breakpoints */
+/* You can adjust these as needed, but 768px is a common breakpoint for tablets and phones */
+@media only screen and (max-width: 768px) {
+  * {
+    font-size: 0.7rem; /* Adjusting the base font size for mobile */
+    box-sizing: border-box;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Add any other styles you want for the header, such as padding or background color */
+  }
+
+  /* Style the unordered list inside the header */
+  #ul_header {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%; /* You can adjust this value based on your design needs */
+    list-style-type: none; /* This removes the default bullet points of the ul */
+    padding: 0; /* This removes the default padding of the ul */
+  }
+
+  #profile_image {
+    width: 220px;
+    height: 220px;
+    border-radius: 250px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  article {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  #friends_to_meet_div,
+  #grades_monitor_div {
+    grid-template-columns: 1fr; /* Stacks items vertically */
+    margin: 20px 0;
+    width: 300px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .friends_to_meet_div_img,
+  .grades_monitor_img {
+    width: 90%; /* Take up most of the screen width */
+    margin: 10px auto; /* Horizontal centering */
+    margin-bottom: 30px;
+  }
+  #article_contact {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #article_contact div {
+    flex-direction: row; /* Ensure that icon and text are side by side */
+    justify-content: center; /* Center content within each item */
+    margin: 10px 0; /* Give a little top and bottom margin for spacing */
+    width: 100%; /* Take the full width */
+    text-align: center; /* Center align the text */
+  }
+
+  #article_contact img {
+    margin-right: 10px; /* Reduce the right margin for the icon */
+  }
+
+  #article_education {
+    text-align: center; /* Center aligns the text */
+    margin-left: auto; /* Aligns the block element to the center */
+    margin-right: auto; /* Aligns the block element to the center */
+    width: 80%; /* Sets the width to 80% for better aesthetics, can be adjusted */
+  }
+
+  #article_education ul {
+    list-style: none; /* Removes bullet points */
+    padding-left: 0; /* Removes the default padding from the unordered list */
+  }
+
+  #article_education li {
+    margin-bottom: 1rem; /* Adds some space between list items */
+  }
+
+  #article_education li p {
+    font-size: 0.6rem;
+  }
+}
