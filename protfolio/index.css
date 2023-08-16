@@ -214,11 +214,11 @@ h2 {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* Add any other styles you want for the header, such as padding or background color */
   }
 
   /* Style the unordered list inside the header */
   #ul_header {
+    background-color: rgb(104, 157, 210);
     display: flex;
     justify-content: space-evenly;
     width: 100%; /* You can adjust this value based on your design needs */
@@ -305,11 +305,10 @@ h2 {
   #article_education li p {
     font-size: 0.6rem;
   }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: white;
-      color: black;
-    }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white;
+    color: black;
   }
 }
