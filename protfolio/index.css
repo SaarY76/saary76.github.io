@@ -4,6 +4,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   width: 100%;
+  background-color: white;
 }
 
 body {
@@ -202,8 +203,10 @@ h2 {
   * {
     font-size: 0.7rem; /* Adjusting the base font size for mobile */
     box-sizing: border-box;
+    background-color: white;
+    color:black
   }
-
+  
   header {
     display: flex;
     justify-content: center;
