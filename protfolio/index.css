@@ -205,8 +205,8 @@ h2 {
   }
 
   body {
-    background-color: white;
-    color: black;
+    background-color: white !important;
+    color: black !important;
   }
 
   header {
@@ -308,8 +308,7 @@ h2 {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: white;
-    background-color: white;
-    color: black;
+    background-color: white !important;
+    color: black !important;
   }
 }
