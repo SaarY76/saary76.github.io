@@ -1,6 +1,6 @@
 html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 0;
   box-sizing: border-box;
   width: 100%;
@@ -8,9 +8,12 @@ html {
 
 body {
   margin: 0; /* Add this to remove the default margin from the body */
-  text-align: center;
   background-color: white;
   min-height: 100vh; /* Minimum height of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -71,7 +74,10 @@ article {
 article p {
   margin: 0;
   padding: 0;
-  text-align: center;
+}
+
+#projects_headline {
+  margin-top: 20px;
 }
 
 #about_headline {
@@ -86,12 +92,18 @@ h1 {
   padding-top: 70px; /* Adjust based on the height of your fixed header */
   margin-top: -70px;
   margin-top: auto;
+  text-align: center;
 }
 
 h2 {
   padding-top: 70px; /* Adjust based on the height of your fixed header */
   margin-top: -70px;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
 }
 
 #friends_to_meet_div {
@@ -200,7 +212,7 @@ h2 {
 /* You can adjust these as needed, but 768px is a common breakpoint for tablets and phones */
 @media only screen and (max-width: 768px) {
   * {
-    font-size: 0.7rem; /* Adjusting the base font size for mobile */
+    font-size: 0.6rem; /* Adjusting the base font size for mobile */
     box-sizing: border-box;
   }
 
@@ -238,11 +250,11 @@ h2 {
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   article {
@@ -266,6 +278,11 @@ h2 {
     margin: 10px auto; /* Horizontal centering */
     margin-bottom: 30px;
   }
+
+  #education_headline {
+    margin-top: 30px;
+  }
+
   #article_contact {
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -284,6 +301,14 @@ h2 {
 
   #article_contact img {
     margin-right: 10px; /* Reduce the right margin for the icon */
+  }
+
+  #article_contact p {
+    margin-top: 5px;
+  }
+
+  #article_contact a {
+    margin-top: 8px;
   }
 
   #article_education {
