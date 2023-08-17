@@ -180,7 +180,7 @@ h3 {
   gap: 20px; /* Gap between grid items */
   width: max-content; /* Ensures the grid container doesn't take up more space than it needs */
   margin: 20px auto; /* Top and bottom margin set to 20px and left/right set to auto */
-  margin-bottom: 200px;
+  margin-bottom: 270px;
 }
 
 .grades_monitor_img {
@@ -196,12 +196,11 @@ h3 {
 .div_skills {
   border: 2px solid black;
   border-radius: 5px;
-  margin-bottom: 380px;
+  margin-bottom: 270px;
 }
 
 #skills_headline {
   margin-bottom: 20px;
-  margin-top: 50px;
 }
 
 .div_skills ul {
@@ -221,18 +220,18 @@ h3 {
 }
 
 #article_education {
-  margin-bottom: 530px;
+  margin-bottom: 250px;
 }
 
 #article_education li {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
 }
 
 #article_education p {
   margin: 10px;
   margin-left: -2px;
   color: rgb(158, 156, 156);
-  font-size: 1.02rem;
+  font-size: 0.82rem;
 }
 
 #contact_headline {
@@ -370,12 +369,18 @@ h3 {
   }
 
   .div_skills {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 8px;
+    margin-left: 8px;
   }
 
   .div_skills ul {
     padding: 0;
+    margin: auto;
+  }
+
+  .div_skills ul li {
+    padding: 0;
+    margin: auto;
   }
 
   .div_skills ul div {
@@ -416,7 +421,7 @@ h3 {
     margin-left: auto; /* Aligns the block element to the center */
     margin-right: auto; /* Aligns the block element to the center */
     width: 80%; /* Sets the width to 80% for better aesthetics, can be adjusted */
-    margin-bottom: 600px;
+    margin-bottom: 270px;
   }
 
   #article_education ul {
