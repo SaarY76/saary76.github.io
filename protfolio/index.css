@@ -7,6 +7,22 @@ html {
   width: 100%;
 }
 
+#education_headline:target::before {
+  content: "";
+  display: block;
+  height: 190px; /* This value determines how much further down the screen will move. Adjust as needed. */
+  margin: -50px 0 0; /* Negative margin of the same value as height to offset the position */
+  visibility: hidden;
+}
+
+#skills_headline:target::before {
+  content: "";
+  display: block;
+  height: 120px; /* This value determines how much further down the screen will move. Adjust as needed. */
+  margin: -50px 0 0; /* Negative margin of the same value as height to offset the position */
+  visibility: hidden;
+}
+
 body {
   margin: 0; /* Add this to remove the default margin from the body */
   background-color: white;
@@ -177,14 +193,46 @@ h3 {
   margin-right: 50px;
 }
 
+.div_skills {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 380px;
+}
+
+#skills_headline {
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.div_skills ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.div_skills ul div {
+  display: flex;
+  font-weight: bold;
+  margin: 30px;
+  padding: 0;
+}
+
+.div_skills ul div li {
+  margin-left: 10px;
+}
+
 #article_education {
-  margin-bottom: 120px;
+  margin-bottom: 530px;
+}
+
+#article_education li {
+  font-size: 1.2rem;
 }
 
 #article_education p {
   margin: 10px;
-  color: rgb(128, 127, 127);
-  font-size: 0.8rem;
+  margin-left: -2px;
+  color: rgb(158, 156, 156);
+  font-size: 1.02rem;
 }
 
 #contact_headline {
@@ -193,20 +241,53 @@ h3 {
 
 #article_contact {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  margin: 0;
   margin-left: 15rem;
   margin-right: 15rem;
+  margin-bottom: 40px;
 }
 
 #article_contact div {
-  justify-content: start;
   display: flex;
   justify-items: center;
-  margin: 30px;
+  margin: 20px;
 }
 
 #article_contact img {
   margin-right: 20px;
+}
+
+#linkedin_div img {
+  margin-bottom: 5px;
+}
+
+#article_contact p {
+  margin-top: 5px;
+}
+
+#article_contact a {
+  margin-top: 5px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as required */
+  background-color: #51d2de; /* Choose your desired background color */
+  color: #ffffff; /* Text color */
+  border: none; /* Removes any default border */
+  text-align: center;
+  text-decoration: none; /* Removes the underline from the link */
+  font-size: 16px; /* Adjust font size as required */
+  margin: 4px 2px;
+  cursor: pointer; /* Makes it look clickable */
+  border-radius: 4px; /* Gives rounded corners. Adjust or remove if you want */
+  transition: background-color 0.3s; /* Optional: Smooth background color transition for hover effect */
+  margin-bottom: 80px;
+}
+
+.button-link:hover {
+  background-color: #40a9b3; /* Darker shade for hover effect */
 }
 
 /* Responsive styling begins here */
@@ -253,7 +334,7 @@ h3 {
   }
 
   h1 {
-    margin-top: -20px;
+    margin-top: 10px;
     font-size: 1.4rem;
   }
 
@@ -278,6 +359,7 @@ h3 {
     width: 300px;
     margin-left: 50px;
     margin-right: 50px;
+    margin-bottom: 200px;
   }
 
   .friends_to_meet_div_img,
@@ -287,6 +369,20 @@ h3 {
     margin-bottom: 30px;
   }
 
+  .div_skills {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .div_skills ul {
+    padding: 0;
+  }
+
+  .div_skills ul div {
+    margin: 10px;
+    padding: 0;
+  }
+
   #education_headline {
     margin-top: 110px;
   }
@@ -294,17 +390,11 @@ h3 {
   #article_contact {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    margin-left: 1rem;
-    margin-right: 1rem;
+    justify-content: start;
   }
 
   #article_contact div {
-    flex-direction: row; /* Ensure that icon and text are side by side */
-    justify-content: center; /* Center content within each item */
-    margin: 10px 0; /* Give a little top and bottom margin for spacing */
-    width: 100%; /* Take the full width */
-    text-align: center; /* Center align the text */
+    margin-left: 60px;
   }
 
   #article_contact img {
@@ -312,10 +402,12 @@ h3 {
   }
 
   #article_contact p {
-    margin-top: 10px;
+    font-size: 0.7rem;
+    margin-top: 5px;
   }
 
   #article_contact a {
+    font-size: 0.7rem;
     margin-top: 10px;
   }
 
@@ -324,6 +416,7 @@ h3 {
     margin-left: auto; /* Aligns the block element to the center */
     margin-right: auto; /* Aligns the block element to the center */
     width: 80%; /* Sets the width to 80% for better aesthetics, can be adjusted */
+    margin-bottom: 600px;
   }
 
   #article_education ul {
@@ -332,6 +425,7 @@ h3 {
   }
 
   #article_education li {
+    font-size: 0.6rem;
     margin-bottom: 1rem; /* Adds some space between list items */
   }
 
