@@ -197,15 +197,17 @@ h3 {
   border: 2px solid black;
   border-radius: 5px;
   margin-bottom: 270px;
+  padding: 0;
 }
 
 #skills_headline {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .div_skills ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
 }
 
 .div_skills ul div {
@@ -315,13 +317,14 @@ h3 {
   #ul_header {
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%; /* You can adjust this value based on your design needs */
     list-style-type: none; /* This removes the default bullet points of the ul */
     padding: 0; /* This removes the default padding of the ul */
   }
 
   #ul_header li a {
+    padding: 10px;
     font-size: 0.8rem;
   }
 
@@ -369,13 +372,14 @@ h3 {
   }
 
   .div_skills {
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .div_skills ul {
     padding: 0;
-    margin: auto;
+    margin: 0;
+    margin-left: 15px;
   }
 
   .div_skills ul li {
