@@ -82,6 +82,19 @@ ul {
   color: black;
 }
 
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 article {
   margin-left: 80px;
   margin-right: 80px;
@@ -136,6 +149,7 @@ h3 {
 
 .friends_to_meet_div_img {
   border: 2px solid black;
+  border-radius: 15px;
   position: relative; /* Added */
   width: 350px;
   height: 500px;
@@ -185,6 +199,7 @@ h3 {
 
 .grades_monitor_img {
   border: 2px solid black;
+  border-radius: 15px;
   position: relative;
   width: 400px;
   height: 600px;
@@ -238,6 +253,7 @@ h3 {
 
 #contact_headline {
   margin-bottom: 30px;
+  margin-top: 250px;
 }
 
 #article_contact {
@@ -246,7 +262,6 @@ h3 {
   margin: 0;
   margin-left: 15rem;
   margin-right: 15rem;
-  margin-bottom: 40px;
 }
 
 #article_contact div {
@@ -284,7 +299,7 @@ h3 {
   cursor: pointer; /* Makes it look clickable */
   border-radius: 4px; /* Gives rounded corners. Adjust or remove if you want */
   transition: background-color 0.3s; /* Optional: Smooth background color transition for hover effect */
-  margin-bottom: 80px;
+  margin-bottom: 350px;
 }
 
 .button-link:hover {
@@ -393,7 +408,7 @@ h3 {
   }
 
   #education_headline {
-    margin-top: 110px;
+    margin-top: 140px;
   }
 
   #article_contact {
