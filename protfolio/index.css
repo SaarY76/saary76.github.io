@@ -340,8 +340,9 @@ h3 {
 
   #ul_header li a {
     font-family: "Times New Roman", Times, serif;
-    padding: 10px;
-    font-size: 0.8rem;
+    padding: 8px;
+    font-size: 0.6rem;
+    font-weight: bold;
   }
 
   #profile_image {
