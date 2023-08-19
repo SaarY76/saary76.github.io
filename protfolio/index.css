@@ -442,7 +442,7 @@ h3 {
     margin-left: auto; /* Aligns the block element to the center */
     margin-right: auto; /* Aligns the block element to the center */
     width: 80%; /* Sets the width to 80% for better aesthetics, can be adjusted */
-    margin-bottom: 270px;
+    margin-bottom: 200px;
   }
 
   #article_education ul {
@@ -457,6 +457,10 @@ h3 {
 
   #article_education li p {
     font-size: 0.6rem;
+  }
+
+  .button-link{
+    margin-bottom: 250px;
   }
 }
 @media (prefers-color-scheme: dark) {
