@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./first_page.js" defer></script>
+    <link rel="stylesheet" href="./first_page.css" />
+    <title>FM Players Manipulation</title>
+  </head>
+  <body>
+    <h1>FM Players Manipulations</h1>
+    <p>
+      Click on the Choose File button to upload your HTML file with MAXIMUM size
+      of 4.5 MB and MAXIMUM amount of 4534 players
+    </p>
+    <div class="file-upload-wrapper">
+      <input
+        type="file"
+        id="fileUpload"
+        accept=".html"
+        onchange="showResultsAfterUserSelectedFile()"
+        style="display: none"
+      />
+      <button
+        id="buttoun_upload"
+        onclick="document.getElementById('fileUpload').click()"
+      >
+        Upload File
+      </button>
+      <span id="fileChosen">No file selected</span>
+    </div>
+    <p id="error_message_file"></p>
+    <p style="font-weight: bold">Here is how to upload your HTML file :</p>
+    <button id="menual_button" onclick="moveToUploadHtmlPageMenual()">
+      Click Here
+    </button>
+    <p>
+      To use this Website's abillities, you need to Download this View file and
+      load into the Football Manager game :
+    </p>
+    <!-- Button for downloading the Table View file -->
+    <button id="download_View_File" onclick="downloadViewFile()">
+      Download View File
+    </button>
+    <p style="font-weight: bold">
+      Here is how to download and install the Football Mangeer View :
+    </p>
+    <button id="menual_button" onclick="moveToDownloadViewPageMenual()">
+      Click Here
+    </button>
+  </body>
+</html>
