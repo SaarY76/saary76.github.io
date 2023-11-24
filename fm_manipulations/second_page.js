@@ -1,4 +1,5 @@
 let page_table = null;
+let flagFirstColumnSortedInOnSubmit = false;
 
 function createFilteredTable() {
   const tableData = getUploadedTableData(); // Retrieve the table data as HTML string
@@ -126,8 +127,43 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     ).map((el) => el.value);
 
+    let lastNonRatingColumnIndex = -1;
+    const headerCells = page_table.rows[0].cells;
+
+    for (let i = 0; i < headerCells.length; i++) {
+      if (!headerCells[i].textContent.includes("Rating")) {
+        lastNonRatingColumnIndex = i;
+      }
+    }
+
+    // Find the index of the "Min Fee Rls" column
+    const firstAddedColumnIndex =
+      lastNonRatingColumnIndex !== -1
+        ? lastNonRatingColumnIndex
+        : headerCells.length - 1;
+
     // Process the table based on the checked roles
     processTableForSelectedRoles(checkedRoles, page_table);
+
+    if (
+      firstAddedColumnIndex >= 0 &&
+      firstAddedColumnIndex < page_table.rows[0].cells.length - 1
+    ) {
+      sortTableByColumn(page_table, firstAddedColumnIndex + 1, false);
+
+      // Explicitly set the sorting state
+      const sortedHeader = page_table.rows[0].cells[firstAddedColumnIndex + 1];
+      sortedHeader.sortAscending = false;
+
+      // Reset sorting state for all other headers
+      const allHeaders = page_table.querySelectorAll("th");
+      allHeaders.forEach((th) => {
+        if (th !== sortedHeader) {
+          th.sortAscending = true;
+        }
+      });
+    }
+    flagFirstColumnSortedInOnSubmit = true;
   };
 });
 
@@ -159,7 +195,6 @@ function addNewColumnsWithRatings(
 ) {
   const headerRow = newTable.rows[0];
 
-  // Add new column headers for each role
   roles.forEach((role, index) => {
     const th = document.createElement("th");
     th.textContent = role + " Rating";
@@ -168,16 +203,40 @@ function addNewColumnsWithRatings(
     sortArrow.style.cursor = "pointer";
     th.appendChild(sortArrow);
 
-    // Initialize sorting direction as descending
-    let ascending = false;
+    th.isSorted = false;
+
     th.addEventListener("click", () => {
-      ascending = !ascending; // Toggle the direction
-      updateSortArrow(sortArrow, ascending);
-      sortTableByColumn(
-        newTable,
-        headerRow.cells.length - roles.length + index,
-        !ascending
-      );
+      // Reset isSorted for all columns except the current one
+      Array.from(headerRow.cells).forEach((cell) => {
+        if (cell !== th) cell.isSorted = false;
+      });
+
+      if (flagFirstColumnSortedInOnSubmit) {
+        flagFirstColumnSortedInOnSubmit = false;
+        th.sortAscending = !th.sortAscending;
+        updateSortArrow(sortArrow, th.sortAscending);
+        sortTableByColumn(
+          newTable,
+          headerRow.cells.length - roles.length + index,
+          th.sortAscending
+        );
+      } else {
+        // If the current column was not previously sorted, sort it in descending order
+        if (!th.isSorted) {
+          th.sortAscending = true; // Next click will sort in ascending order
+          th.isSorted = true;
+        } else {
+          // Toggle the sorting direction
+          th.sortAscending = !th.sortAscending;
+        }
+
+        updateSortArrow(sortArrow, !th.sortAscending);
+        sortTableByColumn(
+          newTable,
+          headerRow.cells.length - roles.length + index,
+          !th.sortAscending
+        );
+      }
     });
 
     headerRow.appendChild(th);
@@ -204,6 +263,22 @@ function addNewColumnsWithRatings(
       appendRatingToRow(newRow, rating);
     });
   }
+}
+
+function isColumnSorted(table, columnIndex) {
+  let previousValue = "";
+  for (let i = 1; i < table.rows.length; i++) {
+    const currentValue = table.rows[i].cells[columnIndex].textContent.trim();
+    if (i === 1) {
+      previousValue = currentValue;
+      continue;
+    }
+    if (currentValue.localeCompare(previousValue) < 0) {
+      return false; // Column is not sorted in ascending order
+    }
+    previousValue = currentValue;
+  }
+  return true; // Column is sorted in ascending order
 }
 
 function findRowByUID(table, uid, columnIndexMap) {
