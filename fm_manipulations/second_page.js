@@ -79,20 +79,57 @@ function createFilteredTable() {
   page_table = newTable;
 }
 
-//////////////////////////////////////////// check
-document.getElementById("roleSelectionForm").onsubmit = function (event) {
-  event.preventDefault();
+/////////////////////
 
-  // Get all checked checkboxes
-  const checkedRoles = Array.from(
-    document.querySelectorAll(
-      '#roleSelectionForm input[type="checkbox"]:checked'
-    )
-  ).map((el) => el.value);
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize all toggle buttons and labels
+  const toggleButtons = document.querySelectorAll(
+    "#roleSelectionForm .toggle-button"
+  );
 
-  // Process the table based on the checked roles
-  processTableForSelectedRoles(checkedRoles, page_table);
-};
+  toggleButtons.forEach((button) => {
+    // Start with the labels hidden and the button showing a down arrow
+    button.innerHTML = "&#9660;";
+    let nextElement = button.parentElement.nextElementSibling;
+    while (nextElement && nextElement.tagName !== "P") {
+      nextElement.style.display = "none";
+      nextElement = nextElement.nextElementSibling;
+    }
+
+    // Add click event listener to toggle labels and button arrow
+    button.addEventListener("click", () => {
+      let showLabels = false;
+      let nextElement = button.parentElement.nextElementSibling;
+
+      while (nextElement && nextElement.tagName !== "P") {
+        if (nextElement.style.display === "none") {
+          nextElement.style.display = "";
+          showLabels = true;
+        } else {
+          nextElement.style.display = "none";
+        }
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      // Toggle button arrow based on label visibility
+      button.innerHTML = showLabels ? "&#9650;" : "&#9660;";
+    });
+  });
+
+  document.getElementById("roleSelectionForm").onsubmit = function (event) {
+    event.preventDefault();
+
+    // Get all checked checkboxes
+    const checkedRoles = Array.from(
+      document.querySelectorAll(
+        '#roleSelectionForm input[type="checkbox"]:checked'
+      )
+    ).map((el) => el.value);
+
+    // Process the table based on the checked roles
+    processTableForSelectedRoles(checkedRoles, page_table);
+  };
+});
 
 function processTableForSelectedRoles(roles, newTable) {
   const tableData = getUploadedTableData();

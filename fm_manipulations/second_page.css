@@ -34,15 +34,22 @@ input[type="checkbox"] {
   margin-right: 0.5rem; /* Space between checkbox and label text */
 }
 
+/* Updated table styles */
 table {
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(70, 70, 70);
   color: white;
   margin-top: 1.2rem;
-  align-items: center;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: auto; /* Center the table */
+  margin-right: auto; /* Center the table */
   font-size: smaller;
-  text-align: center;
+  border-collapse: collapse; /* Ensure borders are neat */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure the rounded corners are visible */
+}
+
+table th,
+table td {
+  padding: 0.5rem; /* Add some padding in table cells */
 }
 
 #input_submit {
@@ -61,20 +68,23 @@ table {
   background-color: rgb(14, 160, 58);
 }
 
-/* #input_submit {
-  font-size: large;
-  background-color: rgb(47, 255, 106);
-  margin-left: 50%;
-  border-radius: 2rem;
-  padding: 1.1rem;
-  border: 2px solid black;
-}
-#input_submit:hover {
-  background-color: rgb(15, 172, 62);
-  border: 2px solid black;
-} */
-
 form p {
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+.toggle-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  color: black; /* Black text (arrow) */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for the arrow */
+  line-height: 1; /* Align with text */
+  vertical-align: middle; /* Vertical alignment with text */
+  padding: 2px 5px; /* Padding around the arrow */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.toggle-button:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
 }
