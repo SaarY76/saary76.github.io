@@ -37,7 +37,6 @@ function readAndCheckFile() {
     // selecting all of the th elements in the first tr
     const firstRowHeader = table.querySelectorAll("tr:first-child th");
     const requiredColumnNames = [
-      "Rec",
       "UID",
       "Inf",
       "Name",
@@ -142,7 +141,7 @@ function showResultsAfterUserSelectedFile() {
     fileChosen.textContent = fileInput.files[0].name;
     readAndCheckFile();
   } else {
-    fileChosen.textContent = "לא נבחר קובץ";
+    fileChosen.textContent = "No file chosen";
   }
 }
 
@@ -163,12 +162,12 @@ window.addEventListener("pageshow", function () {
  */
 function downloadViewFile() {
   // URL to the .fmf file
-  const fileUrl = "./FM All Attributes.fmf";
+  const fileUrl = "./All Attribute Views.zip";
 
   // Creating an anchor element and trigger download
   const anchor = document.createElement("a");
   anchor.href = fileUrl;
-  anchor.download = "FM All Attributes.fmf";
+  anchor.download = "All Attributes Views.zip";
   anchor.click();
 
   // Optional: remove the anchor element after initiating download

@@ -1,4 +1,5 @@
 let page_table = null;
+
 function createFilteredTable() {
   const tableData = getUploadedTableData(); // Retrieve the table data as HTML string
   if (!tableData) {
@@ -8,7 +9,6 @@ function createFilteredTable() {
 
   // Define the required columns
   const requiredColumns = [
-    "Rec",
     "UID",
     "Inf",
     "Name",
@@ -75,7 +75,7 @@ function createFilteredTable() {
 
   // Append the new table to the body or a specific element
   const form_table_container = document.getElementById("form_table_container");
-  form_table_container.appendChild(newTable); // or document.getElementById("yourElementId").appendChild(newTable);
+  form_table_container.appendChild(newTable);
   page_table = newTable;
 }
 
@@ -146,10 +146,13 @@ function addNewColumnsWithRatings(
     headerRow.appendChild(th);
   });
 
-  // Add rating data for each player for each role
   for (let i = 1; i < newTable.rows.length; i++) {
     const newRow = newTable.rows[i];
-    const uid = newRow.cells[columnIndexMap.get("UID")].textContent; // Get UID from the new row
+    // Find the index of the "UID" column in the new table
+    let uidColumnIndex = Array.from(headerRow.cells).findIndex(
+      (cell) => cell.textContent === "UID"
+    );
+    const uid = newRow.cells[uidColumnIndex].textContent; // Directly get UID from the new row (assuming UID is in the second column)
 
     // Find the corresponding row in the original table using UID
     const originalRow = findRowByUID(originalTable, uid, columnIndexMap);

@@ -94,3 +94,7 @@ p {
 #download_View_File:hover {
   background-color: #45a049;
 }
+
+span {
+  font-weight: bold;
+}
