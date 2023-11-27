@@ -55,14 +55,13 @@ table td {
 #input_submit {
   font-size: large;
   padding: 10px 20px;
-  margin-top: 1rem;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left: 50%;
+  margin: 20px;
 }
 #input_submit:hover {
   background-color: rgb(14, 160, 58);
@@ -87,4 +86,75 @@ form p {
 
 .toggle-button:hover {
   transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/*  */
+
+.attribute-section {
+  font-size: medium;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Adjust based on your preference */
+  gap: 10px;
+  margin-left: -5px;
+}
+
+.attribute {
+  background-color: rgb(211, 211, 211);
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+select {
+  padding: 3px;
+}
+
+.attribute label {
+  margin-right: 10px; /* Space between label and select box */
+}
+
+/* Styles for select elements based on value */
+.select-blue {
+  background-color: lightblue;
+}
+
+.select-green {
+  background-color: lightgreen;
+}
+
+/* Ensure the p element and attribute section are aligned */
+form p {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly; /* Center the buttons horizontally */
+  padding: 10px 0; /* Add some vertical padding */
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+#reset {
+  font-size: large;
+  padding: 10px 20px;
+  background-color: rgb(20, 162, 218);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px;
+}
+#reset:hover {
+  background-color: rgb(4, 100, 137);
 }

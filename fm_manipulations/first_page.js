@@ -181,3 +181,4 @@ function moveToUploadHtmlPageMenual() {
 function moveToDownloadViewPageMenual() {
   window.location.href = "./menual_download_view.html";
 }
+

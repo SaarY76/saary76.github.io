@@ -83,26 +83,43 @@ function createFilteredTable() {
 /////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all toggle buttons and labels
+  document.querySelectorAll(".attribute select").forEach((selectElement) => {
+    selectElement.addEventListener("change", (event) => {
+      switch (event.target.value) {
+        case "1":
+          event.target.className = "select-blue";
+          break;
+        case "2":
+          event.target.className = "select-green";
+          break;
+        default:
+          event.target.className = "";
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const toggleButtons = document.querySelectorAll(
     "#roleSelectionForm .toggle-button"
   );
 
   toggleButtons.forEach((button) => {
-    // Start with the labels hidden and the button showing a down arrow
-    button.innerHTML = "&#9660;";
+    button.innerHTML = "&#9660;"; // Start with a down arrow
+
+    // Initially hide elements
     let nextElement = button.parentElement.nextElementSibling;
-    while (nextElement && nextElement.tagName !== "P") {
+    while (nextElement && !nextElement.classList.contains("p_show_hide")) {
       nextElement.style.display = "none";
       nextElement = nextElement.nextElementSibling;
     }
 
-    // Add click event listener to toggle labels and button arrow
+    // Add click event listener
     button.addEventListener("click", () => {
       let showLabels = false;
       let nextElement = button.parentElement.nextElementSibling;
 
-      while (nextElement && nextElement.tagName !== "P") {
+      while (nextElement && !nextElement.classList.contains("p_show_hide")) {
         if (nextElement.style.display === "none") {
           nextElement.style.display = "";
           showLabels = true;
@@ -112,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nextElement = nextElement.nextElementSibling;
       }
 
-      // Toggle button arrow based on label visibility
+      // Update the button arrow
       button.innerHTML = showLabels ? "&#9650;" : "&#9660;";
     });
   });
@@ -121,11 +138,18 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     // Get all checked checkboxes
-    const checkedRoles = Array.from(
+    let checkedRoles = Array.from(
       document.querySelectorAll(
         '#roleSelectionForm input[type="checkbox"]:checked'
       )
     ).map((el) => el.value);
+
+    delete all_roles["created_role"];
+    const roleModel = createUserRole();
+    if (roleModel.length > 0) {
+      all_roles["created_role"] = roleModel;
+      checkedRoles.push("created_role");
+    }
 
     let lastNonRatingColumnIndex = -1;
     const headerCells = page_table.rows[0].cells;
@@ -392,6 +416,54 @@ function sortTableByColumn(table, columnIndex, ascending = true) {
 
   // Append the sorted rows back to the table
   rows.forEach((row) => table.appendChild(row));
+}
+
+function resetRoles() {
+  // Uncheck all checkboxes
+  const checkboxes = document.querySelectorAll(
+    '#roleSelectionForm input[type="checkbox"]'
+  );
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+
+  // Reset all select elements to their first option and remove background color
+  const selects = document.querySelectorAll("#roleSelectionForm select");
+  selects.forEach((select) => {
+    select.selectedIndex = 0;
+    select.className = ""; // Reset any custom background color classes
+  });
+}
+
+function createUserRole() {
+  const roleModel = [];
+
+  // Reverse map to find attribute code by name
+  const reverseAttributeMappings = Object.fromEntries(
+    Object.entries(attributeMappings).map(([code, name]) => [name, code])
+  );
+
+  // Get all the .attribute elements
+  const attributes = document.querySelectorAll(".attribute");
+
+  attributes.forEach((attributeDiv) => {
+    const label = attributeDiv.querySelector("label").textContent;
+    const select = attributeDiv.querySelector("select");
+    const importanceLevel = select.value;
+
+    // Only add attributes with an importance level of 1 or 2
+    if (importanceLevel === "1" || importanceLevel === "2") {
+      const attributeCode = reverseAttributeMappings[label];
+      if (attributeCode) {
+        roleModel.push({
+          atr: attributeCode,
+          lvl: parseInt(importanceLevel),
+        });
+      }
+    }
+  });
+
+  return roleModel;
 }
 
 createFilteredTable();

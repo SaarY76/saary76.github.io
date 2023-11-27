@@ -14,7 +14,7 @@
       <form id="roleSelectionForm">
         <div>
           <h1>Select Player Roles</h1>
-          <p style="font-weight: bold; font-size: 1.4rem">
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
             Goalkeeper Roles
             <button type="button" class="toggle-button">&#9660;</button>
           </p>
@@ -34,7 +34,7 @@
             ><input type="checkbox" name="roles" value="sk_a" /> Sweeper Keeper
             - Attack</label
           >
-          <p style="font-weight: bold; font-size: 1.4rem">
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
             Defence Roles<button type="button" class="toggle-button">
               &#9660;
             </button>
@@ -160,7 +160,7 @@
             ><input type="checkbox" name="roles" value="lib_s" /> Libero -
             Support</label
           >
-          <p style="font-weight: bold; font-size: 1.4rem">
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
             Midfield Roles<button type="button" class="toggle-button">
               &#9660;
             </button>
@@ -273,7 +273,7 @@
             ><input type="checkbox" name="roles" value="trq_a" /> Trequartista -
             Attack</label
           >
-          <p style="font-weight: bold; font-size: 1.4rem">
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
             Winger Roles<button type="button" class="toggle-button">
               &#9660;
             </button>
@@ -346,7 +346,7 @@
             ><input type="checkbox" name="roles" value="wtf_a" /> Wide Target
             Forward - Attack</label
           >
-          <p style="font-weight: bold; font-size: 1.4rem">
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
             Striker Roles<button type="button" class="toggle-button">
               &#9660;
             </button>
@@ -399,9 +399,417 @@
             ><input type="checkbox" name="roles" value="cmp_a" /> Complete
             Forward - Attack</label
           >
+          <p style="font-weight: bold; font-size: 1.4rem" class="p_show_hide">
+            Create your Role<button type="button" class="toggle-button">
+              &#9660;
+            </button>
+          </p>
+          <p>
+            Assign a level of importance to each player attribute to influence
+            the rating calculation - choose '0' for no impact, '1' for
+            important, and '2' for very important.
+          </p>
+          <div class="attribute-section">
+            <!-- Repeat this structure for each attribute -->
+            <div class="attribute">
+              <label>Corners</label>
+              <select name="attributeImportance[Cor]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Crossing</label>
+              <select name="attributeImportance[Cro]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Dribbling</label>
+              <select name="attributeImportance[Dri]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Corners</label>
+              <select name="attributeImportance[Cor]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Finishing</label>
+              <select name="attributeImportance[Fin]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>First Touch</label>
+              <select name="attributeImportance[Fir]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Free Kicks</label>
+              <select name="attributeImportance[Fre]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Heading</label>
+              <select name="attributeImportance[Hea]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Long Shots</label>
+              <select name="attributeImportance[Lon]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Long Throws</label>
+              <select name="attributeImportance[L Th]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Marking</label>
+              <select name="attributeImportance[Mar]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Passing</label>
+              <select name="attributeImportance[Pas]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Penalties</label>
+              <select name="attributeImportance[Pen]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Tackling</label>
+              <select name="attributeImportance[Tck]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Technique</label>
+              <select name="attributeImportance[Tec]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Aggression</label>
+              <select name="attributeImportance[Agg]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Anticipation</label>
+              <select name="attributeImportance[Ant]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Bravery</label>
+              <select name="attributeImportance[Bra]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Composure</label>
+              <select name="attributeImportance[Cmp]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Concentration</label>
+              <select name="attributeImportance[Cnt]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Decisions</label>
+              <select name="attributeImportance[Dec]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Determination</label>
+              <select name="attributeImportance[Det]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Flair</label>
+              <select name="attributeImportance[Fla]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Leadership</label>
+              <select name="attributeImportance[Ldr]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Off the Ball</label>
+              <select name="attributeImportance[OtB]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Positioning</label>
+              <select name="attributeImportance[Pos]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Teamwork</label>
+              <select name="attributeImportance[Tea]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Vision</label>
+              <select name="attributeImportance[Vis]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Work Rate</label>
+              <select name="attributeImportance[Wor]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Acceleration</label>
+              <select name="attributeImportance[Acc]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Agility</label>
+              <select name="attributeImportance[Agi]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Balance</label>
+              <select name="attributeImportance[Bal]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Jumping Reach</label>
+              <select name="attributeImportance[Jum]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Natural Fitness</label>
+              <select name="attributeImportance[Nat]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Pace</label>
+              <select name="attributeImportance[Pac]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Stamina</label>
+              <select name="attributeImportance[Sta]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Strength</label>
+              <select name="attributeImportance[Str]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Strength</label>
+              <select name="attributeImportance[Str]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Aerial Reach</label>
+              <select name="attributeImportance[Aer]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Command of Area</label>
+              <select name="attributeImportance[Cmd]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Communication</label>
+              <select name="attributeImportance[Com]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Eccentricity</label>
+              <select name="attributeImportance[Ecc]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Handling</label>
+              <select name="attributeImportance[Han]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Kicking</label>
+              <select name="attributeImportance[Kic]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>One on Ones</label>
+              <select name="attributeImportance[1v1]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Punching</label>
+              <select name="attributeImportance[Pun]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Reflexes</label>
+              <select name="attributeImportance[Ref]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Rushing Out</label>
+              <select name="attributeImportance[TRO]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="attribute">
+              <label>Throwing</label>
+              <select name="attributeImportance[Thr]">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+          </div>
         </div>
         <br />
-        <input type="submit" id="input_submit" value="Submit" />
+        <div class="buttons">
+          <button id="reset" onclick="resetRoles()">Reset Roles</button>
+          <input type="submit" id="input_submit" value="Submit" />
+        </div>
       </form>
     </div>
   </body>
