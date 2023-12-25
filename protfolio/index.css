@@ -96,8 +96,8 @@ ul {
 }
 
 article {
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-bottom: 80px;
   font-size: 0.9rem;
 }
@@ -194,6 +194,16 @@ h3 {
   gap: 20px; /* Gap between grid items */
   width: max-content; /* Ensures the grid container doesn't take up more space than it needs */
   margin: 20px auto; /* Top and bottom margin set to 20px and left/right set to auto */
+  margin-bottom: 270px;
+}
+
+#football_teams_genrator_div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This creates 3 equal columns */
+  margin-top: 20px;
+  gap: 20px; /* Gap between grid items */
+  width: max-content;
+  margin: 20px auto;
   margin-bottom: 270px;
 }
 
@@ -459,7 +469,7 @@ h3 {
     font-size: 0.6rem;
   }
 
-  .button-link{
+  .button-link {
     margin-bottom: 250px;
   }
 }
