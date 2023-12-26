@@ -382,7 +382,8 @@ h3 {
   }
 
   #friends_to_meet_div,
-  #grades_monitor_div {
+  #grades_monitor_div,
+  #football_teams_genrator_div {
     grid-template-columns: 1fr; /* Stacks items vertically */
     margin: 20px 0;
     width: 300px;
