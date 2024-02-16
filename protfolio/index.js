@@ -29,6 +29,39 @@ function checkVisibility() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the modal
+  var modal = document.getElementById("imgModal");
+
+  // Get the images within the div_diploma container
+  var images = document.querySelectorAll("#div_diploma .education_img");
+  var modalImg = document.getElementById("enlargedImage");
+
+  images.forEach(function (img) {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      // If you have a caption element, you can set its content here
+      // captionText.innerHTML = this.alt;
+    });
+  });
+
+  // Get the <span> element that closes the modal
+  var closeModal = document.getElementById("closeModal");
+
+  // When the user clicks on <span> (x), close the modal
+  closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // Optionally, close the modal if the user clicks anywhere outside the image
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
 // Initial check
 checkVisibility();
 

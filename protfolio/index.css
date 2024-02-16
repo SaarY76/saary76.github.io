@@ -246,10 +246,6 @@ h3 {
   margin-left: 10px;
 }
 
-#article_education {
-  margin-bottom: 250px;
-}
-
 #article_education li {
   font-size: 0.95rem;
 }
@@ -316,11 +312,77 @@ h3 {
   background-color: #40a9b3; /* Darker shade for hover effect */
 }
 
+#div_diploma {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* This creates 3 equal columns */
+  margin-top: 20px;
+  gap: 20px; /* Gap between grid items */
+  width: max-content;
+  margin: 20px auto;
+  margin-bottom: 250px;
+}
+
+.education_img {
+  border: 2px solid black;
+  border-radius: 15px;
+  position: relative;
+  width: 400px;
+  height: 600px;
+  overflow: hidden; /* Ensures that the overlay doesn't overflow */
+}
+
+.education_img:hover {
+  cursor: pointer;
+}
+
+/* Modal background */
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Adjusted base padding for better responsiveness */
+}
+
+.modal-content {
+  display: block;
+  width: auto; /* Maintain aspect ratio */
+  max-width: 80%; /* Start with a higher base max-width for better default scaling */
+  max-height: 80vh; /* Start with a higher base max-height */
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Close Button */
+#closeModal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------- */
+
 /* Responsive styling begins here */
 
 /* Breakpoints */
 /* You can adjust these as needed, but 768px is a common breakpoint for tablets and phones */
 @media only screen and (max-width: 768px) {
+  #imgModal {
+    padding-top: 50%; /* Minimize padding to maximize image size */
+  }
+
   * {
     font-size: 0.6rem; /* Adjusting the base font size for mobile */
     box-sizing: border-box;
@@ -383,7 +445,8 @@ h3 {
 
   #friends_to_meet_div,
   #grades_monitor_div,
-  #football_teams_genrator_div {
+  #football_teams_genrator_div,
+  #div_diploma {
     grid-template-columns: 1fr; /* Stacks items vertically */
     margin: 20px 0;
     width: 300px;
@@ -393,7 +456,9 @@ h3 {
   }
 
   .friends_to_meet_div_img,
-  .grades_monitor_img {
+  .grades_monitor_img,
+  .education_img,
+  .exchange_rates_img {
     width: 90%; /* Take up most of the screen width */
     margin: 10px auto; /* Horizontal centering */
     margin-bottom: 30px;
@@ -453,7 +518,6 @@ h3 {
     margin-left: auto; /* Aligns the block element to the center */
     margin-right: auto; /* Aligns the block element to the center */
     width: 80%; /* Sets the width to 80% for better aesthetics, can be adjusted */
-    margin-bottom: 200px;
   }
 
   #article_education ul {
